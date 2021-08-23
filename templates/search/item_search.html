@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block title %}
+{% if category %} {{ category.name }} {% else %}Products{% endif %}
+{% endblock %}
+{% block content %}
+{% load static %}
+
+        <style>
+          .product img{
+          width: 100%;
+          height:60%;
+          box-sizing: border-box;
+          object-fit: cover;
+          border-radius:3px;
+          }
+          #featured ol{
+          margin:0;
+          padding:0;
+          }
+          #featured ol li {
+          margin:0;
+          list-style:none;
+          padding:10px 14px;
+          }
+          #featured ol li a {
+          display:block;
+
+          }
+          #featured ul li a:hover{
+          background:none !important;
+
+          }
+          #featured ol li.selected {
+          background:#5993bb;
+          border-radius:4px;
+          }
+          #featured ol li.selected a {
+          color:#fff;
+          }
+
+          #featured .page-item.active a {
+            background-color: black;
+          }
+          #featured .container ul li:nth-child(n):hover a{
+            background-color: coral;
+            color: #fff;
+          }
+          a {
+          font-size:16px;
+          text-decoration:none !important;
+          }
+          .btn-sm{
+          margin: 0px 3px 0px;
+          }
+
+          </style>
+
+<section id="featured" class="my-5 py-5">
+
+<div class="row mx-auto container mt-3 py-3">
+    <div class="col-lg-3 col-md-4 col-12">
+        <h2 class="font-weight-bold">Products</h2>
+        <hr>
+    </div>
+
+    <div class="col-lg-5 col-md-6 col-12">
+         {% include 'search/item_search_form.html' %}
+    </div>
+</div>
+     <div class="row mx-auto container">
+         {% for item in items %}
+         <div class="product text-center col-lg-3 col-md-4 col-12" id="my">
+             <a href="{{ item.get_absolute_url }}"><img src="{% if item.image %} {{ item.image.url }} {% else %}{% static 'img/no_image.png' %}{% endif %}" class="img-fluid mb-3"></a>
+             <h5 class="p-name mb-4 font-weight-bold"><a href="{{ item.get_absolute_url }}">{{ item.title }}</a> </h5>
+             <h4 class="p-price mb-2">{{ item.price }}</h4>
+             <button class="buy-btn">Buy Now</button>
+         </div>
+         {% endfor %}
+
+      </div>
+    <div class="row mx-auto container">
+        <div class="pagination">
+            {% if is_paginated %}
+            {% if page_obj.has_previous %}
+            <a class="btn btn-outline-info btn-sm mb-4" href="?page=1">First</a>
+            <a class="btn btn-outline-info btn-sm mb-4" href="?page={{ page_obj.previous_page_number}}">Previous</a>
+            {% endif %}
+            {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+            <a class="btn btn-info btn-sm mb-4" href="?page={{ num }}">{{ num }}</a>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <a class="btn btn-outline-info btn-sm mb-4" href="?page={{ num }}">{{ num }}</a>
+            {% endif %}
+            {% endfor %}
+            {% if page_obj.has_next %}
+            <a class="btn btn-outline-info btn-sm mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+            <a class="btn btn-outline-info btn-sm mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+            {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</section>
+<script>
+
+</script>
+
+{% endblock content %}

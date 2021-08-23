@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<section id="home" style="background-image:url('{% static 'img/banner-bg.png'%}')">
+  <div class="container">
+    <h5>NEW ARRIVALS</h5>
+    <h1><span>Best Price</span>This Year</h1>
+    <p>Shoomatic offers your very comfortable time<br> walking and evercises.</p>
+    <button>Shop Now</button>
+  </div>
+</section>
+<section id="brand" class="container">
+  <div class="row m-0 py-5">
+    <img class="img-fluid col-lg-2 col-md-4 col-6" src="{% static 'img/brand/1.png' %}">
+    <img class="img-fluid col-lg-2 col-md-4 col-6" src="{% static 'img/brand/2.png' %}">
+    <img class="img-fluid col-lg-2 col-md-4 col-6" src="{% static 'img/brand/3.png' %}">
+    <img class="img-fluid col-lg-2 col-md-4 col-6" src="{% static 'img/brand/4.png' %}">
+    <img class="img-fluid col-lg-2 col-md-4 col-6" src="{% static 'img/brand/5.png' %}">
+    <img class="img-fluid col-lg-2 col-md-4 col-6" src="{% static 'img/brand/6.png' %}">
+  </div>
+</section>
+
+<section id="new" class="w-100">
+  <div class="row p-0 m-0">
+    <div class="one col-lg-4 col-md-12 col-12 p-0">
+      <img class="img-fluid" src="{% static 'img/new/1.jpg' %}">
+      <div class="details">
+        <h2>Extreme Rare Sneakers</h2>
+        <button class="text-uppercase">Shop now</button>
+      </div>
+    </div>
+
+    <div class="one col-lg-4 col-md-12 col-12 p-0">
+      <img class="img-fluid" src="{% static 'img/new/5.jpg' %}">
+      <div class="details">
+        <h2>Awesome blank outfit</h2>
+        <button class="text-uppercase">Shop now</button>
+      </div>
+    </div>
+
+    <div class="one col-lg-4 col-md-12 col-12 p-0">
+      <img class="img-fluid" src="{% static 'img/new/3.jpg' %}">
+      <div class="details">
+        <h2>Watch Upto 50% off</h2>
+        <button class="text-uppercase">Shop now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="featured" class="my-5 pb-5">
+  <div class="container text-center mt-5 py-5">
+    <h3>Our Featured</h3>
+    <hr class="mx-auto">
+    <p>Here you can check out our new products with fair price on rymo</p>
+  </div>
+</section>
+
+<section id="banner" class="my-5 py-5" style="background-image:url('{% static 'img/banner/2.jpg' %}')">
+  <div class="container">
+    <h4>MID SEASONS'S SALE</h4>
+    <h1>Autumn Collection <br> UP TO 20% OFF</h1>
+    <button class="text-uppercase"> Shop Now</button>
+  </div>
+</section>
+
+<section id="clothes" class="my-5 ">
+  <div class="container text-center mt-5 py-5">
+    <h3>Dresses and Jumpsuits</h3>
+    <hr class="mx-auto">
+    <p>Here you can check out our new products with fair price on rymo</p>
+  </div>
+  <div class="row mx-auto container-fluid">
+    <div class="product text-center col-lg-3 col-md-4 col-12">
+      <img src="{% static 'img/clothes/1.jpg' %}" class="img-fluid mb-3">
+      <div class="star">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+      </div>
+      <h5 class="p-name">Sport Boots</h5>
+      <h4 class="p-price">$92.00</h4>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+
+
+    <div class="product text-center col-lg-3 col-md-4 col-12">
+      <img src="{% static 'img/clothes/2.jpg' %}" class="img-fluid mb-3">
+      <div class="star">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+      </div>
+      <h5 class="p-name">Sport Boots</h5>
+      <h4 class="p-price">$92.00</h4>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product text-center col-lg-3 col-md-4 col-12">
+      <img src="{% static 'img/clothes/3.jpg' %}" class="img-fluid mb-3">
+      <div class="star">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+      </div>
+      <h5 class="p-name">Sport Boots</h5>
+      <h4 class="p-price">$92.00</h4>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+
+    <div class="product text-center col-lg-3 col-md-4 col-12">
+      <img src="{% static 'img/clothes/1.jpg' %}" class="img-fluid mb-3">
+      <div class="star">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+      </div>
+      <h5 class="p-name">Sport Boots</h5>
+      <h4 class="p-price">$92.00</h4>
+      <button class="buy-btn">Buy Now</button>
+    </div>
+  </div>
+</section>
+{% endblock content %}

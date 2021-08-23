@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+      {{ product.name }}
+{% endblock %}
+{% block content %}
+
+ <style>
+          .small-img-group{
+            display: flex;
+            justify-content: space-between;
+          }
+          .small-img-col{
+            flex-basis: 24%;
+            cursor: pointer;
+          }
+          .sproduct select{
+            display: block;
+            padding: 5px 10px;
+          }
+          .sproduct input{
+            width: 50px;
+            height: 40px;
+            padding-left: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+          }
+          .sproduct input:focus{
+            outline: none;
+          }
+          .buy-btn{
+            background-color: coral;
+            opacity: 1;
+            transition: 0.3s all;
+            color:#fff;
+            padding: 10px 30px;
+            letter-spacing:1px;
+          }
+        </style>
+<section class=" container sproduct my-5 pt-5">
+  <div class="row mt-5">
+    <div class="col-lg-5 col-md-12 col-12">
+      <img id="MainImg" class="img-fluid w-100 pb-1" src="{% if item.image %}{{ item.image.url }}{% else %} {% static 'img/no_image.png' %} {% endif %}">
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-12">
+      <h6>Home / T-Shirt</h6>
+      <h3 class="py-4">{{ item.title }}</h3>
+      <h2>${{ item.price }}</h2>
+      <a class=" btn buy-btn" href="{{ item.get_add_to_cart_url }}" type="submit">Add To Cart</a>
+      <h4 class="mt-5 mb-5">Product Details</h4>
+      <span>{{ item.description }}</span>
+    </div>
+  </div>
+</section>
+
+
+{% endblock content %}
